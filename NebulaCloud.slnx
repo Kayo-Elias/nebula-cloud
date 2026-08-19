@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="NebulaCloud.Agent/NebulaCloud.Agent.csproj" />
+  <Project Path="NebulaCloud.Api/NebulaCloud.Api.csproj" />
+</Solution>
