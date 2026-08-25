@@ -1,5 +1,7 @@
 using System.Net;
 
+namespace Node;
+
 public class Node
 {
     public IPAddress Ip { get; set; }
