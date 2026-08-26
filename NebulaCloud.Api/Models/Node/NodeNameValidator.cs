@@ -10,7 +10,10 @@ public class NodeNameValidator
         {
             return false;
         }
-        return true;
+
+        return HasMaximumLength(node)
+            && HasValidCharacters(node)
+            && StartWithLetter(node);
     }
 
     public bool HasMaximumLength(Node node)
