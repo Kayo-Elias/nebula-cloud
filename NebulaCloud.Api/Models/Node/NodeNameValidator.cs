@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace Node;
 
 public class NodeNameValidator
@@ -9,5 +11,10 @@ public class NodeNameValidator
             return false;
         }
             return true;
+    }
+
+    public bool HasMaximumLength(Node node)
+    {
+        return node.Name.Length <= 15;
     }
 }
