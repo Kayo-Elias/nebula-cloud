@@ -35,4 +35,9 @@ public class NodeNameValidator
     {
         return Regex.IsMatch(node.Name, @"^[a-zA-Z]");
     }
+
+    public bool EndWithLetterOrNumber(Node node)
+    {
+        return Regex.IsMatch(node.Name, @"[a-zA-Z0-9]$");
+    }
 }
