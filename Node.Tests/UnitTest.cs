@@ -16,4 +16,19 @@ public class NodeNameValidatorTests
 
         Assert.True(result);
     }
+
+     [Fact]
+    public void Should_Return_True_When_Node_Starts_With_Letter()
+    {
+        var node = new Node
+        {
+            Name = "Server01"
+        };
+
+        var validator = new NodeNameValidator();
+
+        var result = validator.StartWithLetter(node);
+
+        Assert.True(result);
+    }
 }
