@@ -22,4 +22,9 @@ public class NodeNameValidator
     {
         return Regex.IsMatch(node.Name, @"^[a-zA-Z0-9_-]+$");
     }
+
+    public bool StartWithLetter(Node node)
+    {
+        return Regex.IsMatch(node.Name, @"^[a-zA-Z]");
+    }
 }
