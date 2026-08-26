@@ -16,6 +16,11 @@ public class NodeNameValidator
             && StartWithLetter(node);
     }
 
+    public bool HasMinimumLength(Node node)
+    {
+        return node.Name.Length >= 3;
+    }
+
     public bool HasMaximumLength(Node node)
     {
         return node.Name.Length <= 15;
