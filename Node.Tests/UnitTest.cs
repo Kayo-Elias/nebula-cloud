@@ -31,4 +31,19 @@ public class NodeNameValidatorTests
 
         Assert.True(result);
     }
+
+    [Fact]
+    public void Should_Return_HasMaximumLength()
+    {
+        var node = new Node
+        {
+            Name = "Server01"   
+        };
+
+        var validator = new NodeNameValidator();
+
+        var result = validator.HasMaximumLength(node);
+
+        Assert.True(result);
+    }
 }
