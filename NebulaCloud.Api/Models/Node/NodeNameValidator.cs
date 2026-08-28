@@ -14,7 +14,8 @@ public class NodeNameValidator
         return HasMinimumLength(node)
             && HasMaximumLength(node)
             && HasValidCharacters(node)
-            && StartWithLetter(node);
+            && StartWithLetter(node)
+            && EndWithLetterOrNumber(node);
     }
 
     public bool HasMinimumLength(Node node)
