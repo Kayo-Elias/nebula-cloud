@@ -11,14 +11,15 @@ public class NodeNameValidator
             return false;
         }
 
-        return HasMaximumLength(node)
+        return HasMinimumLength(node)
+            && HasMaximumLength(node)
             && HasValidCharacters(node)
             && StartWithLetter(node);
     }
 
     public bool HasMinimumLength(Node node)
     {
-        return node.Name.Length >= 3;
+        return node.Name.Length >= 5;
     }
 
     public bool HasMaximumLength(Node node)
