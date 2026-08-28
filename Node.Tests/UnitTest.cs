@@ -136,4 +136,19 @@ public class NodeNameValidatorTests
 
         Assert.False(result);
     }
+
+    [Fact]
+    public void Should_Return_False_When_Name_Ends_With_Invalid_Character()
+    {
+        var node = new Node
+        {
+            Name = "Server_"
+        };
+
+        var validator = new NodeNameValidator();
+
+        var result = validator.EndWithLetterOrNumber(node);
+
+        Assert.False(result);
+    }
 }
