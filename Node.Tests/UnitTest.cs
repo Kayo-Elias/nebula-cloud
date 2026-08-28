@@ -61,4 +61,19 @@ public class NodeNameValidatorTests
 
         Assert.True(result);
     }
+
+    [Fact]
+    public void Should_Return_False_When_Name_Exceeds_MaximumLength()
+    {
+        var node = new Node
+        {
+            Name = "Server1234567890"
+        };
+
+        var validator = new NodeNameValidator();
+
+        var result = validator.IsValid(node);
+
+        Assert.False(result);
+    }
 }
