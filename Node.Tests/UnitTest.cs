@@ -46,4 +46,19 @@ public class NodeNameValidatorTests
 
         Assert.True(result);
     }
+
+    [Fact]
+    public void Should_Return_HasMinimumLength()
+    {
+        var node = new Node
+        {
+            Name = "Server01"   
+        };
+
+        var validator = new NodeNameValidator();
+
+        var result = validator.HasMinimumLength(node);
+
+        Assert.True(result);
+    }
 }
