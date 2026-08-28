@@ -91,4 +91,19 @@ public class NodeNameValidatorTests
 
         Assert.False(result);
     }
+
+    [Fact]
+    public void Should_Return_False_When_Name_Starts_With_Number()
+    {
+        var node = new Node
+        {
+            Name = "01Server"
+        };
+
+        var validator = new NodeNameValidator();
+
+        var result = validator.IsValid(node);
+
+        Assert.False(result);
+    }
 }
