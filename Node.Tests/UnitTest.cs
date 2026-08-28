@@ -106,4 +106,19 @@ public class NodeNameValidatorTests
 
         Assert.False(result);
     }
+
+    [Fact]
+    public void Should_Return_False_When_Name_Is_Empty()
+    {
+        var node = new Node
+        {
+            Name = string.Empty
+        };
+
+        var validator = new NodeNameValidator();
+
+        var result = validator.IsValid(node);
+
+        Assert.False(result);
+    }
 }
