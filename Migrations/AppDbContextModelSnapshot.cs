@@ -3,7 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Node.Data;
+using NebulaCloud.Data;
 
 #nullable disable
 
@@ -17,7 +17,7 @@ namespace NebulaCloud.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.12");
 
-            modelBuilder.Entity("Node.Node", b =>
+            modelBuilder.Entity("NebulaCloud.Models.Node", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -1,14 +1,14 @@
 using System.Net;
 
-namespace Node;
+namespace NebulaCloud.Models;
 
 public class Node
 {
     public int Id { get; private set; }
     public IPAddress? Ip { get; private set; }
-    public string? Name { get; private set;}
-    public NodeStatus Status { get; private set; }
-    public double Memory { get; private set;}
+    public string? Name { get; set;}
+    public NodeStatus Status { get; set; }
+    public double Memory { get; set;}
     public double Storage { get; private set; }
     public DateTime SessionDuration { get; private set;}
 

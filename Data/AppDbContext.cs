@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using NebulaCloud.Models;
 
-namespace Node.Data;
+namespace NebulaCloud.Data;
 
 public class AppDbContext : DbContext
 {
