@@ -1,0 +1,12 @@
+bin/
+obj/
+app.db
+app.db-shm
+app.db-wal
+
+*.user
+*.suo
+.vs/
+
+appsettings.Local.json
+secrets.json
