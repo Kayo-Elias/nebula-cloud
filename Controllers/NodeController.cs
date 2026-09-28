@@ -41,19 +41,15 @@ public class NodeController : ControllerBase
         [FromBody] Node node,
         [FromServices] AppDbContext context)
     {
-        var Node = context.Nodes.FirstOrDefault(x => x.Id == id);
+        var existingNode = context.Nodes.FirstOrDefault(x => x.Id == id);
 
-        if (node == null)
-        {
+        if (existingNode == null)
             return NotFound();
-        }
 
-        node.Name = node.Name;
-        node.Status = node.Status;
-
-        context.Nodes.Update(node);
+        existingNode.Name = node.Name;
+        existingNode.Status = node.Status;
         context.SaveChanges();
-        return Ok(node);
+        return Ok(existingNode);
     }
 
     [HttpDelete("/{id:int}")]
@@ -65,7 +61,7 @@ public class NodeController : ControllerBase
         if (node == null)
             return NotFound();
 
-        context.Nodes.Update(node);
+        context.Nodes.Remove(node);
         context.SaveChanges();
         return Ok(node);
     }

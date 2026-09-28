@@ -8,6 +8,5 @@ public class AppDbContext : DbContext
     public DbSet<Node> Nodes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite("DataSource=app.db; Cache=Shared"); 
-    
+        => optionsBuilder.UseSqlServer("Server=localhost,1433;Database=NebulaCloud;User ID=sa;Password=1q2w3e4r@#$");
 }
