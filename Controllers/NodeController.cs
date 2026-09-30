@@ -5,9 +5,10 @@ using NebulaCloud.Models;
 namespace NebulaCloud.Controllers;
 
 [ApiController]
+[Route("nodes")]
 public class NodeController : ControllerBase
 {
-    [HttpGet("/")]
+    [HttpGet]
     public IActionResult Get([FromServices] AppDbContext context)
      => Ok(context.Nodes.ToList());
 
@@ -23,7 +24,7 @@ public class NodeController : ControllerBase
         return Ok(node);
     }
 
-    [HttpPost("/")]
+    [HttpPost]
     public IActionResult Post(
         [FromBody] Node node,
         [FromServices] AppDbContext context
