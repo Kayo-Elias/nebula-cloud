@@ -10,7 +10,7 @@ using NebulaCloud.Data;
 
 namespace NebulaCloud.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
+    [DbContext(typeof(NebulaCloudDbContext))]
     [Migration("20260925135146_InitialCreate")]
     partial class InitialCreate
     {

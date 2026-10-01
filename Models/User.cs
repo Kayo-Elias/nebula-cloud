@@ -14,11 +14,11 @@ public class User
 
     [Required]
     [MaxLength(25)]
-    public string Name { get; set;}
+    public string Name { get; set;} = String.Empty;
 
     [Required]
     [MaxLength(20)]
-    public string Password { get; set;}
+    public string Password { get; set;} = String.Empty;
     
     [Required]
     public EUserRole ERole { get; set;} = EUserRole.Member;

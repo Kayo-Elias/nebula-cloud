@@ -5,66 +5,65 @@ using NebulaCloud.Models;
 namespace NebulaCloud.Controllers;
 
 [ApiController]
-[Route("api/v1/nodes")]
-public class NodeController : ControllerBase
+[Route("api/v1/users")]
+public class UserController : ControllerBase
 {
     [HttpGet]
     public IActionResult Get(
-        [FromServices] NebulaCloudDbContext context)
-     => Ok(context.Nodes.ToList());
+    [FromServices] NebulaCloudDbContext context)
+     => Ok(context.Users.ToList());
 
     [HttpGet("{id:int}")]
     public IActionResult GetById(
         [FromRoute] int id,
         [FromServices] NebulaCloudDbContext context)
     {
-        var node = context.Nodes.FirstOrDefault(x => x.Id == id);
-        if (node == null)
+        var user = context.Users.FirstOrDefault(x => x.Id == id);
+        if (user == null)
             return NotFound();
 
-        return Ok(node);
+        return Ok(user);
     }
 
     [HttpPost]
     public IActionResult Post(
-        [FromBody] Node node,
+        [FromBody] User user,
         [FromServices] NebulaCloudDbContext context
     )
     {
-        context.Nodes.Add(node);
+        context.Users.Add(user);
         context.SaveChanges();
 
-        return Created($"/{node.Id}", node);
+        return Created($"/{user.Id}", user);
     }
 
     [HttpPut("{id:int}")]
     public IActionResult Put(
         [FromRoute] int id,
-        [FromBody] Node node,
+        [FromBody] User user,
         [FromServices] NebulaCloudDbContext context)
     {
-        var existingNode = context.Nodes.FirstOrDefault(x => x.Id == id);
+        var existingUser = context.Users.FirstOrDefault(x => x.Id == id);
 
-        if (existingNode == null)
+        if (existingUser == null)
             return NotFound();
 
-        existingNode.Name = node.Name;
-        existingNode.Status = node.Status;
+        existingUser.Name = user.Name;
         context.SaveChanges();
-        return Ok(existingNode);
+        return Ok(existingUser);
     }
 
-    [HttpDelete("{id:int}")]
+     [HttpDelete("{id:int}")]
     public IActionResult Delete(
         [FromRoute] int id,
         [FromServices] NebulaCloudDbContext context)
     {
-        var node = context.Nodes.FirstOrDefault(x => x.Id == id);
-        if (node == null)
+        var user = context.Users.FirstOrDefault(x => x.Id == id);
+        if (user == null)
             return NotFound();
 
-        context.Nodes.Remove(node);
+        context.Users.Remove(user);
         context.SaveChanges();
-        return Ok(node);
+        return Ok(user);
     }
 }

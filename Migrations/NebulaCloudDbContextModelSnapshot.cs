@@ -9,8 +9,8 @@ using NebulaCloud.Data;
 
 namespace NebulaCloud.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(NebulaCloudDbContext))]
+    partial class NebulaCloudDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
