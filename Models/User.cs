@@ -1,29 +1,23 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NebulaCloud.Models;
 
-
-[Table("User")]
 public class User
 {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Required]
     public int Id { get; set; }
 
     [Required]
     [MaxLength(25)]
-    public string Name { get; set;} = String.Empty;
+    public string Name { get; set; } = string.Empty;
 
     [Required]
     [MaxLength(20)]
-    public string Password { get; set;} = String.Empty;
-    
-    [Required]
-    public EUserRole ERole { get; set;} = EUserRole.Member;
+    public string Password { get; set; } = string.Empty;
 
-    public User () { }
+    [Required]
+    public EUserRole ERole { get; set; } = EUserRole.Member;
+
+    public User() { }
 
     public User(int id, string name, string password)
     {
@@ -31,7 +25,7 @@ public class User
         Name = name;
         Password = password;
     }
-    
+
     public enum EUserRole
     {
         Member = 0,
