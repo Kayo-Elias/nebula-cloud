@@ -34,5 +34,11 @@ public class UserMap : IEntityTypeConfiguration<User>
 
         builder.HasIndex(x => x.Name, "IX_User_Name")
         .IsUnique();
+
+        builder.HasMany(x => x.Nodes)
+        .WithOne(x => x.User)
+        .HasForeignKey(x => x.UserId)
+        .HasConstraintName("FK_User_Id")
+        .IsRequired();
     }
 }

@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace NebulaCloud.Models;
 
 public class User
@@ -8,6 +6,7 @@ public class User
     public string Name { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
     public EUserRole ERole { get; set; } = EUserRole.Member;
+    public ICollection<Node> Nodes { get; set; } = new List<Node>();
 
     public User() { }
 

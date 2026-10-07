@@ -3,6 +3,8 @@ namespace NebulaCloud.Models;
 public class Node
 {
     public int Id { get; set; }
+    public int UserId { get; set; }
+    public User User { get; set; } = null!;
     public string Ip { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
 
