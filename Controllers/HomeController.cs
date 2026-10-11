@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace NebulaCloud.Controllers;
 
 [ApiController]
-[Route("")]
+[Route("api/v1/health")]
 public class HomeController : ControllerBase
 {
-    [HttpGet("")]
+    [HttpGet]
     public IActionResult Get()
     {
         return Ok();
