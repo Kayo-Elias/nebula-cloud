@@ -6,10 +6,27 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1">
-        <MudText Typo="Typo.h6">NebulaCloud</MudText>
+    <MudAppBar Elevation="1" Style="background-color: #6A1B9A; color: white;">
+        <MudText Typo="Typo.h6">Nebula Cloud</MudText>
+
+        <MudSpacer />
+        <div class="d-flex align-center gap-4">
+            <MudButton Variant="Variant.Text" Color="Color.Inherit" Size="Size.Large"
+                       Style="text-transform: none;">Serviços</MudButton>
+            <MudButton Variant="Variant.Text" Color="Color.Inherit" Size="Size.Large"
+                       Style="text-transform: none;">Preços</MudButton>
+            <MudButton Variant="Variant.Text" Color="Color.Inherit" Size="Size.Large"
+                       Style="text-transform: none;">Soluções</MudButton>
+            <MudButton Variant="Variant.Text" Color="Color.Inherit" Size="Size.Large"
+                       Style="text-transform: none;">Documentação</MudButton>
+            <MudButton Variant="Variant.Text" Color="Color.Inherit" Size="Size.Large"
+                       Style="text-transform: none;">Entrar</MudButton>
+            <MudButton Class="rounded-lg" Variant="Variant.Outlined" Color="Color.Inherit" Size="Size.Large"
+                       Style="text-transform: none;">Criar Conta</MudButton>
+        </div>
+
     </MudAppBar>
-    <MudMainContent Class="pa-4">
+    <MudMainContent>
         @Body
     </MudMainContent>
 </MudLayout>
