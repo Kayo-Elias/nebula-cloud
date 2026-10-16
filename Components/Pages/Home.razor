@@ -2,14 +2,30 @@
 
 <PageTitle>Nebula Cloud</PageTitle>
 
-<MudPaper Square="true" Elevation="0"
-          Style="background-color: #F5F6FA; min-height: calc(100vh - 64px); display: flex; align-items: center;">
+<MudPaper Square="true" Elevation="0" Class="d-flex align-center"
+          Style="background-color: #F5F6FA; min-height: calc(100vh - 64px); overflow-x: clip;">
     <MudContainer MaxWidth="MaxWidth.Large" Class="py-8">
-        <MudText Typo="Typo.h3" Style="color: #24003B; max-width: 1050px;">
-            <strong>Sua infraestrutura de nuvem, mais rápida e inteligente.</strong>
-        </MudText>
-        <MudText Typo="Typo.h6" Class="mt-6" Style="color: #24003B; max-width: 850px;">
-            Armazenamento, computação e inteligência artificial com a potência do NebulaCloud. Escalável, seguro e feito para o seu negócio.
-        </MudText>
+
+        <MudGrid Spacing="6">
+
+            <MudItem xs="12" md="6" Class="d-flex flex-column justify-center">
+                <MudText Typo="Typo.h2" Style="color: #24003B;">
+                    <strong>Sua infraestrutura de nuvem, mais rápida e inteligente.</strong>
+                </MudText>
+
+                <MudText Typo="Typo.h5" Class="mt-6" Style="color: #24003B;">
+                    Armazenamento e computação com a potência do Nebula Cloud. Escalável,
+                    seguro e feito para o seu negócio.
+                </MudText>
+
+            </MudItem>
+
+            <MudItem xs="12" md="6" Class="d-flex justify-center">
+                <MudImage Src="/images/nebula-cloud-back.png"
+                          Alt="Ilustração de serviços de nuvem, servidores e análise de dados"
+                          Fluid="true"
+                          Style="max-width: 750px;" />
+            </MudItem>
+        </MudGrid>
     </MudContainer>
 </MudPaper>
