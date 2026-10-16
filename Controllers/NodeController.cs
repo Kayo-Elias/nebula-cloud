@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using NebulaCloud.Data;
 using NebulaCloud.Models;
+using NebulaCloud.Services;
 
 namespace NebulaCloud.Controllers;
 
@@ -31,9 +32,13 @@ public class NodeController : ControllerBase
         [FromServices] NebulaCloudDbContext context
     )
     {
-        context.Nodes.Add(node);
-        context.SaveChanges();
+        if (new NodeNameValidator().IsValid(node, context))
+        {
+            context.Nodes.Add(node);
+            context.SaveChanges();
 
+            return Created($"/{node.Id}", node);
+        }
         return Created($"/{node.Id}", node);
     }
 
@@ -43,6 +48,7 @@ public class NodeController : ControllerBase
         [FromBody] Node node,
         [FromServices] NebulaCloudDbContext context)
     {
+
         var existingNode = context.Nodes.FirstOrDefault(x => x.Id == id);
 
         if (existingNode == null)

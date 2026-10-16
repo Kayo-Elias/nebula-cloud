@@ -7,7 +7,6 @@ public class Node
     public User User { get; set; } = null!;
     public string Ip { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
-
     public ENodeStatus Status { get; set; } = ENodeStatus.Offline;
     public double Memory { get; set; }
     public double Storage { get; set; }
