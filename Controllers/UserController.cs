@@ -1,11 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using NebulaCloud.Data;
 using NebulaCloud.Models;
+using NebulaCloud.Services;
 
 namespace NebulaCloud.Controllers;
 
 [ApiController]
-[Route("api/v1/users")]
+[Route("v1/users")]
 public class UserController : ControllerBase
 {
     [HttpGet]
@@ -31,6 +32,7 @@ public class UserController : ControllerBase
         [FromServices] NebulaCloudDbContext context
     )
     {
+        if(new UserNameValidator().IsValid(user, context) )
         context.Users.Add(user);
         context.SaveChanges();
 

@@ -6,7 +6,7 @@ using NebulaCloud.Services;
 namespace NebulaCloud.Controllers;
 
 [ApiController]
-[Route("api/v1/nodes")]
+[Route("v1/nodes")]
 public class NodeController : ControllerBase
 {
     [HttpGet]
