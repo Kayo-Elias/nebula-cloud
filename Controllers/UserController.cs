@@ -10,11 +10,11 @@ namespace NebulaCloud.Controllers;
 public class UserController : ControllerBase
 {
     [HttpGet("v1/users")]
-    public async Task<IActionResult> Get(
+    public async Task<IActionResult> GetAsync(
     [FromServices] NebulaCloudDbContext context) => Ok(context.Users.ToList());
 
     [HttpGet("v1/users/{id:int}")]
-    public async Task<IActionResult> GetById(
+    public async Task<IActionResult> GetByIdAsync(
         [FromRoute] int id,
         [FromServices] NebulaCloudDbContext context)
     {
@@ -27,7 +27,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPost("v1/users")]
-    public async Task<IActionResult> Post(
+    public async Task<IActionResult> PostAsync(
         [FromBody] User user,
         [FromServices] NebulaCloudDbContext context
     )
@@ -40,7 +40,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPut("v1/users/{id:int}")]
-    public async Task<IActionResult> Put(
+    public async Task<IActionResult> PutAsync(
         [FromRoute] int id,
         [FromBody] User user,
         [FromServices] NebulaCloudDbContext context)
@@ -57,7 +57,7 @@ public class UserController : ControllerBase
     }
 
      [HttpDelete("v1/users/{id:int}")]
-    public async Task<IActionResult> Delete(
+    public async Task<IActionResult> DeleteAsync(
         [FromRoute] int id,
         [FromServices] NebulaCloudDbContext context)
     {
