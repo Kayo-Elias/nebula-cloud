@@ -65,7 +65,7 @@ public class NodeController : ControllerBase
     }
 
     [HttpDelete("v1/nodes/{id:int}")]
-    public async Task<IActionResult> Delete(
+    public async Task<IActionResult> DeleteAsync(
         [FromRoute] int id,
         [FromServices] NebulaCloudDbContext context)
     {
